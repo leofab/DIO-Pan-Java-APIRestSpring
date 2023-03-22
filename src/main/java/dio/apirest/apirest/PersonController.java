@@ -1,9 +1,6 @@
 package dio.apirest.apirest;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -17,6 +14,12 @@ public class PersonController {
     }
 
     // Métodos de requisição
+
+    @GetMapping("/")
+    @RequestMapping(method = RequestMethod.GET)
+    public String helloWorld(){
+        return ("This is my first API in Spring Boot");
+    }
 
     @GetMapping("/persons")
     public Person consultAllPersons(){

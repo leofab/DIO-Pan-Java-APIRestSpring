@@ -1,15 +1,25 @@
 
 spring:
-  datasource:
-    url: dioawsrdspostgresdb.cluster-ccv6crtbpnud.us-east-1.rds.amazonaws.com
+  javax:
+    persistence.jdbc.url: jdbc:postgresql://dioawsrdspostgresdb.cluster-ccv6crtbpnud.us-east-1.rds.amazonaws.com:5432/postgres
     username: postgres
-    password: root
+    password: rootroot
+  datasource:
+    url: jdbc:postgresql://dioawsrdspostgresdb.cluster-ccv6crtbpnud.us-east-1.rds.amazonaws.com:5432/postgres
+    username: postgres
+    password: rootroot
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate.format_sql: true
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        connection:
+          url: jdbc:postgresql://dioawsrdspostgresdb.cluster-ccv6crtbpnud.us-east-1.rds.amazonaws.com:5432/postgres
+          username: postgres
+          password: rootroot
 
 logging:
   level:

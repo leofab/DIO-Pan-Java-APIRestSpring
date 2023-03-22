@@ -1,7 +1,7 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/academia?useTimezone=true&serverTimezone=UTC&useLegacyDate
+    url: dioawsrdspostgresdb.cluster-ccv6crtbpnud.us-east-1.rds.amazonaws.com
     username: postgres
     password: root
   jpa:

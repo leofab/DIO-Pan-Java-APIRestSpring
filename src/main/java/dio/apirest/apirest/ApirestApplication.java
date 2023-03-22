@@ -16,6 +16,7 @@ public class ApirestApplication {
 	CommandLineRunner commandLineRunner(PersonRepository repository){
 		return args ->{
 			repository.save(new Person("João" ));
+			repository.save(new Person("Maria" ));
 		};
 
 	}

@@ -2,6 +2,7 @@ package dio.apirest.apirest;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -22,8 +23,8 @@ public class PersonController {
     }
 
     @GetMapping("/persons")
-    public Person consultAllPersons(){
-        return (Person) repositoryPerson.findAll();
+    public List<Person> consultAllPersons(){
+        return repositoryPerson.findAll();
     }
 
     @PostMapping("/persons/{id}")

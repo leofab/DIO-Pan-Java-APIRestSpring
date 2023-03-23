@@ -1,7 +1,6 @@
 package apirest;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,5 +14,18 @@ public class EmployeeController {
     public List<Employee> listOfAllEmployee(){
         return repository.findAll();
     }
+
+    @GetMapping("/employee/{id}")
+    public Employee consultById(@PathVariable Long id){
+        return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
+    }
+
+    @PostMapping("/employees")
+    public Employee newEmployee(@RequestBody Employee newEmployee){
+        return repository.save(newEmployee);
+    }
+
+    // modificação parcial
+
 
 }

@@ -26,6 +26,18 @@ public class EmployeeController {
     }
 
     // modificação parcial
+    @PutMapping("/employess/{id}")
+    Employee replaceEmployee(@RequestBody Employee newEmployee, Long id) {
+        return repository.findById(id).map(employee -> {
+           employee.setName(newEmployee.getName());
+           employee.setRole(newEmployee.getRole());
+           employee.setAddress(newEmployee.getAddress());
+           return repository.save(employee);
+        }).orElseGet(() -> {
+            newEmployee.setId(id);
+            return repository.save(newEmployee);
+        });
+    }
 
 
 }

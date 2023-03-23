@@ -14,10 +14,10 @@ public class ApirestrdsApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(PersonRepository repository){
+	CommandLineRunner commandLineRunner(EmployeeRepository repository){
 		return args ->{
-//			repository.save(new Person("João" ));
-//			repository.save(new Person("Maria" ));
+			repository.save(new Employee("João", "Adm", "St 102, 45 - Reno - NV"));
+			repository.save(new Employee("Maria", "Frontdesk", "Ave 41, 44 - Reno - NV" ));
 		};
 
 	}

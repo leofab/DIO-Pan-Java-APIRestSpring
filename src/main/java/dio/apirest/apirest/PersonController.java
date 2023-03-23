@@ -16,8 +16,9 @@ public class PersonController {
 
     // Métodos de requisição
 
-    @GetMapping("/")
-    @RequestMapping(method = RequestMethod.GET)
+    //@GetMapping("/home")
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @ResponseBody
     public String helloWorld(){
         return ("This is my first API in Spring Boot");
     }
@@ -27,7 +28,7 @@ public class PersonController {
         return repositoryPerson.findAll();
     }
 
-    @PostMapping("/persons/{id}")
+    @GetMapping("/persons/{id}")
     public Optional<Person> consultById(@PathVariable Long id){
         return repositoryPerson.findById(id);
     }

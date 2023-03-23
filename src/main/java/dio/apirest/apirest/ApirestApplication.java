@@ -15,8 +15,8 @@ public class ApirestApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(PersonRepository repository){
 		return args ->{
-			repository.save(new Person("João" ));
-			repository.save(new Person("Maria" ));
+//			repository.save(new Person("João" ));
+//			repository.save(new Person("Maria" ));
 		};
 
 	}

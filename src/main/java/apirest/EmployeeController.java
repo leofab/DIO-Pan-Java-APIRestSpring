@@ -1,15 +1,15 @@
 package apirest;
 
-import dio.apirest.apirest.Hateoas.Repositories.EmployeeRepository;
+import dio.apirest.apirest.Hateoas.Repositories.EmployeeHateoasRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class EmployeeController {
-    private final EmployeeRepository repository;
+    private final EmployeeHateoasRepository repository;
 
-    public EmployeeController(EmployeeRepository repository){ this.repository = repository; }
+    public EmployeeController(EmployeeHateoasRepository repository){ this.repository = repository; }
 
     @GetMapping("/employees")
     public List<Employee> listOfAllEmployee(){
